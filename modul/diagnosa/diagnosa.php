@@ -11,6 +11,7 @@ switch ($_GET['act']) {
       date_default_timezone_set("Asia/Jakarta");
       $inptanggal = date('Y-m-d H:i:s');
 
+      //Interprestasi Nilai Certainty
       $arbobot = array('0', '1', '0.8', '0.6', '0.4', '-0.2', '-0.4', '-0.6', '-0.8', '-1');
       $argejala = array();
 

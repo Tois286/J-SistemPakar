@@ -17,7 +17,7 @@ switch ($_GET['act']) {
         //tolak Users
     case 'tolak':
         $id_users = $_GET['id'];
-        $keterangan = 'rejected';
+        $keterangan = 'Rejected';
         mysqli_query($conn, "UPDATE users SET keterangan='$keterangan' WHERE id_users='$id_users'");
         echo "<script>alert('Status berhasil diupdate'); window.location.href='index.php?module=users';</script>";
         break;
@@ -67,7 +67,7 @@ switch ($_GET['act']) {
                 echo "<tr>
                       <td align='center'>$no</td>
                       <td>{$r['username']}</td>
-                      <td>{$r['keterangan']}</td>
+                      <td align='center' style='color: " . ($r['keterangan'] == 'Rejected' ? 'yellow' : ($r['keterangan'] == 'Active' ? 'green' : 'black')) . "; background-color: #B8B8B8C9; font-weight: bold;'>{$r['keterangan']}</td>
                       <td align='center' style='width: 30%;'>
                         <a class='btn btn-success  btn-sm' href='?module=users&act=terima&id={$r['id_users']}'><i class='fa fa-check' aria-hidden='true'></i> Terima</a> &nbsp;
                         <a class='btn btn-warning btn-sm' href='?module=users&act=tolak&id={$r['id_users']}'><i class='fa fa-close' aria-hidden='true'></i> Tolak</a> &nbsp;
