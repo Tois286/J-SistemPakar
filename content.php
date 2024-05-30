@@ -29,4 +29,6 @@ if ($module == "") {
     include "modul/riwayat/detail.php";
 } elseif ($module == "formlogin") {
     include "modul/formlogin.php";
+} elseif ($module == "kirim_form") {
+    include "kirim_form.php";
 }

@@ -116,7 +116,7 @@
                 </a>
               </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse in" aria-expanded="true" style="">
+            <div id="collapseThree" class="panel-collapse collapse in" aria-expanded="true">
               <div class="box-body">
                 <a href="animasi/bantuan/user/riwayat.gif" target="_blank"><img src="animasi/bantuan/user/riwayat.gif" alt="Mengakses Diagnosa" /></a><br><br>
                 <div style="font-size: 16px;">
