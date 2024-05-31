@@ -86,7 +86,7 @@ switch ($_GET['act']) {
             <hr>
             <div id="legend-container"></div>
           </div>
-          <!-- /.box-body-->
+          <!-- /.box-body -->
         </div>
       </div>
 
