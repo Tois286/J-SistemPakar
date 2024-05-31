@@ -4,8 +4,6 @@
 <?php
 include "config/fungsi_alert.php";
 $aksi = "modul/riwayat/aksi_hasil.php";
-include "config/koneksi.php";
-
 switch ($_GET['act']) {
     // Tampil hasil
   default:
@@ -74,7 +72,6 @@ switch ($_GET['act']) {
             <i class="fa fa-pie-chart"></i>
 
             <h3 class="box-title">Grafik</h3>
-
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
               </button>
@@ -132,26 +129,29 @@ switch ($_GET['act']) {
     }
 }
 ?>
-
 <script>
   $(function() {
-
     <?php
-    //$arr[] = array();
+    session_start();
+    include '../../config/koneksi.php';
+    $arr = array(); // Inisialisasi array $arr
+    $hasilg_query = mysqli_query($conn, "SELECT hasil_id, COUNT(hasil_id) AS jlh_id FROM hasil GROUP BY hasil_id ORDER BY jlh_id DESC");
 
-    $hasilg = mysqli_query($conn, "SELECT hasil_id, count(hasil_id) jlh_id FROM hasil group by hasil_id ORDER BY jlh_id desc");
-    while ($rg = mysqli_fetch_array($hasilg)) {
-      if ($rg['hasil_id'] > 0) {
-        $arr[] = array('label' => '&nbsp;' . $arpkt[$rg['hasil_id']], 'data' => array(array('Penyakit ' . $rg['hasil_id'], $rg['jlh_id'])));
+    if ($hasilg_query) {
+      while ($rg = mysqli_fetch_assoc($hasilg_query)) {
+        if ($rg['hasil_id'] > 0) {
+          $arr[] = array('label' => '&nbsp;' . $arpkt[$rg['hasil_id']], 'data' => array(array('Penyakit ' . $rg['hasil_id'], $rg['jlh_id'])));
+        }
       }
+    } else {
+      echo "Error: " . mysqli_error($conn);
     }
+
+    // Encode array $arr to JSON format
+    $donutData = json_encode($arr);
     ?>
-    var donutData = <?php echo json_encode($arr); ?>
-    //      var donutData = [
-    //        {label: 'Series2', data: 30, color: '#3c8dbc'},
-    //        {label: 'Series3', data: 20, color: '#0073b7'},
-    //        {label: 'Series4', data: 50, color: '#00c0ef'}
-    //      ]
+
+    var donutData = <?php echo $donutData; ?>; // Menggunakan JSON yang telah diencode
 
     function legendFormatter(label, series) {
       return '<div class="text text-primary margin4">' + label + ' ' + Math.round(series.percent) + '%';
@@ -171,7 +171,6 @@ switch ($_GET['act']) {
             },
             threshold: 0.01
           }
-
         }
       },
       legend: {
@@ -179,12 +178,12 @@ switch ($_GET['act']) {
         container: $("#legend-container"),
         labelFormatter: legendFormatter,
       }
-    })
+    });
+
     /*
      * END DONUT CHART
      */
-
-  })
+  });
 
   /*
    * Custom Label formatter
@@ -194,6 +193,6 @@ switch ($_GET['act']) {
     return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">' +
       label +
       '<br>' +
-      Math.round(series.percent) + '%</div>'
+      Math.round(series.percent) + '%</div>';
   }
 </script>

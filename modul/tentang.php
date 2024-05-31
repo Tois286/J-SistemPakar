@@ -26,7 +26,7 @@
       <header class="mb4">
         <img class="br-100" src="gambar/admin/favicon.png" alt="Profile headshot" />
         <h1 class="f3 lh-title mv2 dark-gray">ON-CONTEST 1.0</h1>
-        <p class="f6 silver mt2 mb0"><a class="link dim silver"><button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Pengembang Aplikasi"><i class="fa fa-user" aria-hidden="true"></i>Siti Safniyyah</button></a>
+        <p class="f6 silver mt2 mb0"><a href="https://www.instagram.com/nanuuunnn?igsh=MWVjMm1iMzg5MXdrcQ==" class="link dim silver"><button style="margin-bottom: 10px;" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Pengembang Aplikasi"><i class="fa fa-user" aria-hidden="true"></i>Siti Safniyyah</button></a>
         </p>
         <br>
         <h2 class="f5 silver mt2 mb1">Sistem Pakar, Diagnosa Penyakit Pada Burung Kontes</h2>

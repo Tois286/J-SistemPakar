@@ -141,8 +141,102 @@ include "config/fungsi_alert.php";
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
     <!-- Main Footer -->
+    <?php if (isset($_SESSION['username'])) : ?>
+      <button class="kontak ke-kanan" data-toggle="modal" data-target="#modalForm">
+        <i class="fa fa-envelope-square"></i> Kontak Kami
+      </button>
+    <?php endif; ?>
+
     <footer class="main-footer">
-      <!-- Default to the left --><!-- Tombol untuk memicu modal -->
+      <!-- Default to the left -->
+      <!-- Modal -->
+      <div class="modal fade" id="modalForm" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content" style="max-width: 450px;">
+            <!-- Modal Header -->
+            <div class="modal-header mdl-kontak">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Tutup</span>
+              </button>
+              <h4 class="text-ket" id="labelModalKu"><i class="fa fa-envelope-square"></i> Kontak Kami</h4>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <p class="statusMsg"></p>
+              <form role="form">
+                <div class="form-group">
+                  <label for="masukkanNama">Nama: </label>
+                  <input type="text" class="form-control" id="masukkanNama" placeholder="Masukkan nama Anda" style="margin-left: 11px;" />
+                </div>
+                <div class="form-group">
+                  <label for="masukkanEmail">Email: </label>
+                  <input type="email" class="form-control" id="masukkanEmail" placeholder="Masukkan email Anda" style="margin-left: 11px;" />
+                </div>
+                <div class="form-group">
+                  <label for="masukkanPesan">Pesan: </label>
+                  <textarea class="form-control" id="masukkanPesan" placeholder="Masukkan pesan Anda" style="min-width: 200px; max-height: 250px; min-height: 80px; max-width: 290px; margin-left: 10px; width: 270px; height: 133px;"></textarea>
+                </div>
+              </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn bg-maroon btn-flat" data-dismiss="modal">Keluar</button>
+              <button type="button" class="btn bg-olive btn-flat" onclick="kirimContactForm()">Kirim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function kirimContactForm() {
+          var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+          var nama = $('#masukkanNama').val();
+          var email = $('#masukkanEmail').val();
+          var pesan = $('#masukkanPesan').val();
+          if (nama.trim() == '') {
+            alert('Masukkan nama Anda.');
+            $('#masukkanNama').focus();
+            return false;
+          } else if (email.trim() == '') {
+            alert('Masukkan email Anda.');
+            $('#masukkanEmail').focus();
+            return false;
+          } else if (email.trim() != '' && !reg.test(email)) {
+            alert('Masukkan email yang valid.');
+            $('#masukkanEmail').focus();
+            return false;
+          } else if (pesan.trim() == '') {
+            alert('Masukkan pesan Anda.');
+            $('#masukkanPesan').focus();
+            return false;
+          } else {
+            $.ajax({
+              type: 'POST',
+              url: 'kirim_form.php',
+              data: 'contactFrmSubmit=1&nama=' + nama + '&email=' + email + '&pesan=' + pesan,
+              beforeSend: function() {
+                $('.submitBtn').attr("disabled", "disabled");
+                $('.modal-body').css('opacity', '.5');
+              },
+              success: function(msg) {
+                if (msg == 'ok') {
+                  $('#masukkanNama').val('');
+                  $('#masukkanEmail').val('');
+                  $('#masukkanPesan').val('');
+                  $('.statusMsg').html('<span style="color:green;">Terima kasih telah menghubungi kami.</p>');
+                } else {
+                  $('.statusMsg').html('<span style="color:red;">Ada sedikit masalah, silakan coba lagi.</span>');
+                }
+                $('.submitBtn').removeAttr("disabled");
+                $('.modal-body').css('opacity', '');
+              }
+            });
+          }
+        }
+      </script>
+      <!-- Default to the left -->
       <strong>
         <div class="cinta">Copyright © 2024 - Made with <i class="fa fa-heart pulse"></i> by <a href="" target="_blank">Siti Safniyyah</a></div>
       </strong>
@@ -151,6 +245,9 @@ include "config/fungsi_alert.php";
            immediately after the control sidebar -->
     <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
   </div><!-- ./wrapper -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
