@@ -118,7 +118,7 @@ $dtgejala = mysqli_fetch_assoc($htgejala); ?>
       <img src="aset/banner/komunitas.png" alt="">
 
       <h2>Sahabat Komunitas</h2>
-      <p>Sistem Pakar ini terus di sesuaikan perhitungan diagnosanya, supaya akurasi terhadap penyakit yang diderita lebih sesuai dan menjadi acuan peternak.</p>
+      <p>Sistem Pakar ini terus di sesuaikan perhitungan diagnosanya, supaya akurasi terhadap penyakit yang diderita lebih sesuai dan menjadi acuan penghobi burung kontes.</p>
     </div>
   </div>
   <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeIn;">

@@ -139,7 +139,7 @@
   </div>
 </div>
 <script>
-  var d = document.getElementById("pakarayam");
+  var d = document.getElementById("pakarburung");
   d.className += " sidebar-collapse";
 </script>
 <script>
