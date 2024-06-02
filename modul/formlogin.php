@@ -85,8 +85,8 @@ ini_set('display_errors', true);
         </div>
         <form class="login-form" action="daftar.php" method="post" name="daftar_form">
           <input type="text" name="username" id="username_daftar" placeholder="&#xf007;  Username" style="font-family:Arial, FontAwesome" />
-          <input type="password" name="password" id="password_daftar" placeholder="&#xf023;  Password" style="font-family:Arial, FontAwesome" />
-          <input type="password" name="confirm_password" id="confirm_password" placeholder="&#xf023;  Konfirmasi Password" style="font-family:Arial, FontAwesome" />
+          <input type="password" name="password" id="password" placeholder="&#xf023;  Password" style="font-family:Arial, FontAwesome" />
+          <input type="password" name="confirm_password" id="md_password" placeholder="&#xf023;  Konfirmasi Password" style="font-family:Arial, FontAwesome" />
           <input type="submit" name="submit" id="submitdaftar" value="Daftar" /><br>
         </form>
         Sudah punya akun? <a href="#" id="showLogin"><i class="fa fa-sign-in"></i> <span>Login</span></a>

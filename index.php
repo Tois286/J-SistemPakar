@@ -35,6 +35,7 @@ include "config/fungsi_alert.php";
   <link rel="stylesheet" href="aset/icheck/green.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <!-- jQuery 2.1.4 -->
   <script src="aset/jQuery-2.js"></script>
   <!-- Bootstrap 3.3.5 -->
@@ -245,9 +246,6 @@ include "config/fungsi_alert.php";
            immediately after the control sidebar -->
     <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
   </div><!-- ./wrapper -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

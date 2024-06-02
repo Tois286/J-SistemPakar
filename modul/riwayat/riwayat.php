@@ -1,5 +1,7 @@
 <title>Riwayat - Chirexs 1.0</title>
 <h2 class='text text-primary'>Riwayat Konsultasi</h2>
+
+
 <hr>
 <?php
 include "config/fungsi_alert.php";
@@ -159,6 +161,14 @@ switch ($_GET['act']) {
           position: 'bottom'
         }
       }
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('[data-toggle="offcanvas"]').click(function() {
+      $('#offcanvas').toggleClass('active');
     });
   });
 </script>
