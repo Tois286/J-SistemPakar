@@ -84,7 +84,7 @@ include "config/fungsi_alert.php";
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="/gambar/admin/admin.png" class="img-circle" alt="User Image">
+                    <img src="gambar/admin/admin.png" class="img-circle" alt="User Image">
                     <p>
                       Login sebagai <?php echo ucfirst($_SESSION['username']); ?>
                       <small>Pakar dari Chirexs 1.0</small>
@@ -167,16 +167,16 @@ include "config/fungsi_alert.php";
               <p class="statusMsg"></p>
               <form role="form">
                 <div class="form-group">
-                  <label for="masukkanNama">Nama: </label>
-                  <input type="text" class="form-control" id="masukkanNama" placeholder="Masukkan nama Anda" style="margin-left: 11px;" />
+                  <label for="masukkanNama" style="position: absolute;">Nama: </label>
+                  <input type="text" class="form-control" id="masukkanNama" placeholder="Masukkan nama Anda" style="margin-left: 60px;" />
                 </div>
                 <div class="form-group">
-                  <label for="masukkanEmail">Email: </label>
-                  <input type="email" class="form-control" id="masukkanEmail" placeholder="Masukkan email Anda" style="margin-left: 11px;" />
+                  <label for="masukkanEmail" style="position: absolute;">Email: </label>
+                  <input type="email" class="form-control" id="masukkanEmail" placeholder="Masukkan email Anda" style="margin-left: 60px;" />
                 </div>
                 <div class="form-group">
-                  <label for="masukkanPesan">Pesan: </label>
-                  <textarea class="form-control" id="masukkanPesan" placeholder="Masukkan pesan Anda" style="min-width: 200px; max-height: 250px; min-height: 80px; max-width: 290px; margin-left: 10px; width: 270px; height: 133px;"></textarea>
+                  <label for="masukkanPesan" style="position: absolute;">Pesan: </label>
+                  <textarea class="form-control" id="masukkanPesan" placeholder="Masukkan pesan Anda" style="min-width: 200px; max-height: 250px; min-height: 80px; max-width: 290px; margin-left: 60px; width: 270px; height: 133px;"></textarea>
                 </div>
               </form>
             </div>

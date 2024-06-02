@@ -69,9 +69,9 @@ switch ($_GET['act']) {
       echo "</tbody></table></div>";
 ?>
       <div class="col-md-4">
-        <div class="card border-success">
+        <div class="card border-success" style="margin-top: -6%">
           <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-            <h3 class="card-title mb-0" style="background-color: aliceblue;">Grafik</h3>
+            <h3 class="card-title mb-0" style="background-color: aliceblue; height: 25px;">Grafik</h3>
 
           </div>
           <div class="card-body collapse show" id="card-body">
@@ -123,8 +123,8 @@ switch ($_GET['act']) {
 ?>
 
 <!-- jQuery and Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
