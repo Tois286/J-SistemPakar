@@ -56,6 +56,8 @@ switch ($_GET['act']) {
                     <tr>
                       <th>No</th>
                       <th>Username</th>
+                      <th>Alamat</th>
+                      <th>No. Telphone</th>
                       <th>Keterangan</th>
                       <th width='21%'>Aksi</th>
                     </tr>
@@ -67,6 +69,8 @@ switch ($_GET['act']) {
                 echo "<tr>
                       <td align='center'>$no</td>
                       <td>{$r['username']}</td>
+                      <td>{$r['alamat']}</td>
+                      <td>{$r['no_tpln']}</td>
                       <td align='center' style='color: " . ($r['keterangan'] == 'Rejected' ? 'yellow' : ($r['keterangan'] == 'Active' ? 'green' : 'black')) . "; background-color: #B8B8B8C9; font-weight: bold;'>{$r['keterangan']}</td>
                       <td align='center' style='width: 30%;'>
                         <a class='btn btn-success  btn-sm' href='?module=users&act=terima&id={$r['id_users']}'><i class='fa fa-check' aria-hidden='true'></i> Terima</a> &nbsp;

@@ -9,7 +9,8 @@ if (isset($_POST['contactFrmSubmit']) && !empty($_POST['nama']) && !empty($_POST
     /*
      * Kirim email ke alamat dibawah ini
      */
-    $ke     = 'safniyyahs@gmail.com';
+    // $ke     = 'safniyyahs@gmail.com';
+    $ke = 'itoto1937@gmail.com';
     $subjek = 'Kontak Bantuan On-Contest';
 
     $kontenHtml = '
