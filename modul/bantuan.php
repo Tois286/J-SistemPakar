@@ -19,9 +19,9 @@
           <br><br><br><br><br><br>
           <h2><i class="fa fa-phone" aria-hidden="true"></i> Hubungi Admin:</h2><br>
           Silahkan hubungi admin dengan mengklik tombol kontak admin. Jika butuh bantuan silahkan kirim pesan apa yang menjadi kendala.<br> Email yang terdaftar sebagai pakar akan di tindak lanjuti.<br><br>
-          <button style="float: none;" class="kontak" data-toggle="modal" data-target="#modalForm">
-            <i class="fa fa-envelope-square"></i> Kontak Admin
-          </button><br><br><br><br><br><br>
+
+          <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=itoto1937@gmail.com" class="btn btn-outline-primary"> <i class="fa fa-envelope-square" role="button" data-bs-toggle="button"></i> Kontak Admin</a><br><br>
+
         </div>
       </div>
     <?php endif; ?>
