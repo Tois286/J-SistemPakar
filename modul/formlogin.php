@@ -88,7 +88,7 @@ ini_set('display_errors', true);
           <input type="password" name="password" id="password" placeholder="&#xf023;  Password" style="font-family:Arial, FontAwesome" />
           <input type="password" name="confirm_password" id="md_password" placeholder="&#xf023;  Konfirmasi Password" style="font-family:Arial, FontAwesome" />
           <input type="alamat" name="alamat" id="alamat" placeholder="Alamat lengkap" style="font-family:Arial, FontAwesome" />
-          <input type="no_tpln" name="no_tpln" id="no_tpln" placeholder="Isikan Nomor telphon anda" style="font-family:Arial, FontAwesome" />
+          <input type="number" name="no_tpln" id="no_tpln" step="0.01" placeholder="Isikan Nomor telphon anda" style="font-family:Arial, FontAwesome" required />
           <input type="submit" name="submit" id="submitdaftar" value="Daftar" /><br>
         </form>
         Sudah punya akun? <a href="#" id="showLogin"><i class="fa fa-sign-in"></i> <span>Login</span></a>
